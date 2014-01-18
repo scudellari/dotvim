@@ -77,6 +77,8 @@ inoremap <Leader>= <C-x><C-l>
 
 " --------------------------------- Ctrl-P ------------------------------------
 nmap <C-p> :CtrlP<CR>
+nmap <Leader>p<C-p> :CtrlP /usr/local/www/data-local<CR>
+nmap <Leader>r<C-p> :CtrlP /usr/local/www/resources<CR>
 nmap <Leader>b :CtrlPBuffer<CR>
 
 " --------------------------- Visual Mode Mappings ----------------------------
@@ -89,4 +91,8 @@ vmap D y'>p']
 vmap * "zy/<C-r>z<CR>
 vmap # "zy?<C-r>z<CR>
 
+nmap  :tabp<CR>
+nmap  :tabn<CR>
+imap  <ESC>:tabp<CR>
+imap  <ESC>:tabn<CR>
 " vim: set et ts=4 sw=4 :

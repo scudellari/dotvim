@@ -90,16 +90,20 @@ let NERDTreeQuitOnOpen=0
 
 " --------------------------------- CtrlP ------------------------------------
 let g:ctrlp_open_new_file = 'h'
-let g:ctrlp_user_command = "find %s -type f -not -wholename '*.svn*' " .
+let g:ctrlp_user_command = "find %s -type f " .
+                         \ "-not -wholename '*/sdk/*' " .
+                         \ "-not -wholename '*/.git/*' " .
+                         \ "-not -wholename '*/.svn/*' " .
                          \ "-not -iname '*.jpg' " .
                          \ "-not -iname '*.gif' " .
                          \ "-not -iname '*.pdf' " .
                          \ "-not -iname '*.png' " .
+                         \ "-not -iname '*.ttf' " .
+                         \ "-not -iname '*.dat' " .
+                         \ "-not -iname '*.so' " .
+                         \ "-not -iname 'Thumbs.db' " .
+                         \ "-not -iname '.DS_Store' " .
                          \ "| sort -d"
-let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$|\.svn$',
-    \ 'file': '\.so$|\.dat$|\.DS_Store$|Thumbs.db|\.pdf$|\.jpg$|\.png$|\.ttf$|\.gif$'
-\ }
 
 " ------------------------------- Quicktask ----------------------------------
 let g:quicktask_autosave = 1
@@ -112,7 +116,7 @@ let g:quicktask_snip_win_maximize = 1
 let g:quicktask_snip_default_filetype = "markdown"
 
 " -------------------------------- Snippets ----------------------------------
-let g:snips_author = 'Aaron Bieber <abieber@wayfair.com>'
+let g:snips_author = 'Ryan Scudellari <rscudellari@wayfair.com>'
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
 let g:UltiSnipsDontReverseSearchPath = "1"
 
